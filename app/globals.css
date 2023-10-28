@@ -2,26 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply box-border p-0 m-0 bg-whiteColor tracking-widest
+}
+
+/* Layout & Component Styles */
+.main{
+  @apply max-w-[1440px] m-auto bg-whiteColor w-full h-auto md:p-6 p-2 font-dm relative
+}
+.common_button{
+  @apply w-[140px] h-[50px] bg-primaryColor rounded-[10px] flex items-center justify-center font-semibold text-[20px] text-whiteColor
+}
+.common_button_outlined{
+  @apply w-[140px] h-[50px] bg-transparent border-[2px] border-primaryColor rounded-[10px] flex items-center justify-center font-semibold text-[20px] text-primaryColor
+}
+.search_button{
+  @apply w-[140px] h-[80px] bg-primaryColor rounded-[10px] flex items-center justify-center font-semibold text-[20px] text-whiteColor
+}
+.section{
+  @apply pt-14 flex flex-col gap-6 w-full h-auto
+}
+.rating{
+  @apply w-[85px] h-[38px] bg-primaryColor rounded-full flex flex-row justify-evenly items-center shadow-sm
+}
+
+/* Text Styles */
+.desc_text{
+  @apply text-darkGrayColor font-semibold text-[20px]
+}
+.hero_text{
+  @apply text-secondaryColor text-[64px] font-bold leading-[85px]
+}
+.small_text{
+  @apply text-darkGrayColor text-[16px] font-bold
+}
+.title_text{
+  @apply text-secondaryColor text-[48px] font-bold leading-[55px]
+}
+
+/* Opacity for only parent elements */
+.parent {
+  @apply bg-opacity-60
 }
